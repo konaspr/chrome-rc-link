@@ -25,5 +25,9 @@ document.addEventListener('contextmenu', (event) => {
   if (href.startsWith('javascript:') || href === '#' || href === '') return;
 
   event.preventDefault();
-  chrome.runtime.sendMessage({ action: 'openLink', url: href });
+  if (chrome.runtime?.sendMessage) {
+    chrome.runtime.sendMessage({ action: 'openLink', url: href });
+  } else {
+    window.open(href, '_blank', 'noopener,noreferrer');
+  }
 }, true);
