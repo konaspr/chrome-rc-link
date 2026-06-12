@@ -3,7 +3,7 @@
   "name": "Right-Click Open Link",
   "version": "1.1",
   "description": "Right-click any link to open it directly in a new tab. Ctrl+right-click shows the regular context menu.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "activeTab"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
