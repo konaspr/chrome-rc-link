@@ -12,5 +12,5 @@ document.addEventListener('contextmenu', (event) => {
   if (href.startsWith('javascript:') || href === '#' || href === '') return;
 
   event.preventDefault();
-  window.open(href, '_blank', 'noopener,noreferrer');
+  chrome.runtime.sendMessage({ action: 'openLink', url: href });
 }, true);
