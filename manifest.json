@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Right-Click Open Link",
+  "version": "1.0",
+  "description": "Right-click any link to open it directly in a new tab. Ctrl+right-click shows the regular context menu.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
